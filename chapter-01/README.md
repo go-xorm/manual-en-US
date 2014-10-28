@@ -7,8 +7,13 @@ import (
     _ "github.com/go-sql-driver/mysql"
     "github.com/go-xorm/xorm"
 )
-engine, err := xorm.NewEngine("mysql", "root:123@/test?charset=utf8")
-defer engine.Close()
+
+var engine *xorm.Engine
+
+func main() {
+    var err error
+    engine, err = xorm.NewEngine("mysql", "root:123@/test?charset=utf8")
+}
 ```
 
 or
@@ -17,12 +22,19 @@ or
 import (
     _ "github.com/mattn/go-sqlite3"
     "github.com/go-xorm/xorm"
-    )
-engine, err = xorm.NewEngine("sqlite3", "./test.db")
-defer engine.Close()
+)
+
+var engine *xorm.Engine
+
+func main() {
+    var err error
+    engine, err = xorm.NewEngine("sqlite3", "./test.db")
+}
 ```
 
 You can create many engines for different databases.Generally, you just need create only one engine. Engine supports run on go routines.
+
+When you want to manually close then engine, call `engine.Close`. Generally, we don't need to do this, because engine will be closed automatically when application exit.
 
 xorm supports four drivers now:
 
