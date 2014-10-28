@@ -15,3 +15,5 @@
 * [GoCMS - github.com/zzboy/GoCMS](https://github.com/zzdboy/GoCMS)
 
 * [GoBBS - gobbs.domolo.com](http://gobbs.domolo.com/)
+
+* [go-blog](http://wangcheng.me) - [github.com/easykoo/go-blog](https://github.com/easykoo/go-blog)
