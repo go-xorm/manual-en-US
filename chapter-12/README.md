@@ -12,7 +12,9 @@ type User struct {
 
 * Does xorm support composite primary key?
 
-  Yes. You can use pk tag. All fields have tag will as one primary key by fields order on struct. When use, you can use xorm.PK{1, 2}. For example: `Id(xorm.PK{1, 2})`.
+  Yes. You can use pk tag. All fields have tag `pk` will as one primary key by fields order on struct. When use, you can use `xorm.PK{1, 2}`. For example: 
+
+      `Id(xorm.PK{1, 2})`.
 
 * How to use join？
 
@@ -39,9 +41,9 @@ type User struct {
 
     //assert(User.Userinfo.Id != 0 && User.Userdetail.Id != 0)
 
-Please notice that Userinfo field on User should be before Userdetail because of the order on join SQL stsatement. If the order is wrong, the same name field may be set a wrong value.
+Please notice that Userinfo field on User should be before Userdetail because of the order on join SQL stsatement. If the order is wrong, the same name field may be set a wrong value and no error will be indicated.
 
-Of course, If join statment is very long, you could directly use Sql():
+Of course, if join statment is very long, you could directly use Sql():
 
     err := engine.Sql("select * from userinfo, userdetail where userinfo.detail_id = userdetail.id").Find(&users)
 
