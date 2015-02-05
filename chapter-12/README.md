@@ -1,50 +1,56 @@
-# FAQ
+## Event
+xorm supports two kinds of events. One is a method on a data model struct, another is called in session process.
 
-* How the xorm tag use both with json?
-  
-  Use space.
+Struct's event methods is below:
+
+* `BeforeInsert()`
+
+This method will be called before data be inserted into database on insert process.
+
+* `BeforeUpdate()`
+
+This method will be called before data be updated into database on update process.
+
+* `BeforeDelete()`
+
+This method will be called before data be deleted on delete process.
+
+* `func BeforeSet(name string, cell xorm.Cell)`
+
+This method will be called on  Get or Find. After data is retrieve from database and before data will be set to struct.
+
+* `AfterInsert()`
+
+This method will be called after data be inserted into database on insert process.
+
+* `AfterUpdate()`
+
+This method will be called after data be updated into database on update process.
+
+* `AfterDelete()`
+
+This method will be called after data be deleted on delete process.
+
+Process temporory events is:
+
+* `Before(beforeFunc interface{})`
+
+This method will be called before any process. For example:
 
 ```Go
-type User struct {
-    Name string `json:"name" xorm:"name"`
+before := func(bean interface{}){
+    fmt.Println("before", bean)
 }
+engine.Before(before).Insert(&obj)
 ```
 
-* Does xorm support composite primary key?
+* `After(afterFunc interface{})`
 
-  Yes. You can use pk tag. All fields have tag `pk` will as one primary key by fields order on struct. When use, you can use `xorm.PK{1, 2}`. For example: 
+This method will be called after any process. For example:
 
-      `Id(xorm.PK{1, 2})`.
-
-* How to use join？
-
-  We can use Join() and extends tag to do join operation. For example:
-
-    type Userinfo struct {
-        Id int64
-        Name string
-        DetailId int64
-    }
-
-    type Userdetail struct {
-        Id int64
-        Gender int
-    }
-
-    type User struct {
-        Userinfo `xorm:"extends"`
-        Userdetail `xorm:"extends"`
-    }
-
-    var users = make([]User, 0)
-    err := engine.Table(&Userinfo{}).Join("LEFT", "userdetail", "userinfo.detail_id = userdetail.id").Find(&users)
-
-    //assert(User.Userinfo.Id != 0 && User.Userdetail.Id != 0)
-
-Please notice that Userinfo field on User should be before Userdetail because of the order on join SQL stsatement. If the order is wrong, the same name field may be set a wrong value and no error will be indicated.
-
-Of course, if join statment is very long, you could directly use Sql():
-
-    err := engine.Sql("select * from userinfo, userdetail where userinfo.detail_id = userdetail.id").Find(&users)
-
-    //assert(User.Userinfo.Id != 0 && User.Userdetail.Id != 0)
+```Go
+before := func(bean interface{}){
+    fmt.Println("after", bean)
+}
+engine.After(after).Insert(&obj)
+```
