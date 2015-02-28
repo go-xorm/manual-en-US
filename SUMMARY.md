@@ -12,6 +12,7 @@
     * [Create indexes and uniques](chapter-03/3.indexes.md)
     * [Sync database schema](chapter-03/4.sync.md)
 * [Insert records](chapter-04/README.md)
+    * [Created](chapter-04/1.created.md)
 * [Query and Count records](chapter-05/README.md)
     * [Query condition methods](chapter-05/1.conditions.md)
     * [Temporory methods](chapter-05/2.overrides.md)
