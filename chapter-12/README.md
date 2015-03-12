@@ -49,7 +49,7 @@ engine.Before(before).Insert(&obj)
 This method will be called after any process. For example:
 
 ```Go
-before := func(bean interface{}){
+after := func(bean interface{}){
     fmt.Println("after", bean)
 }
 engine.After(after).Insert(&obj)
