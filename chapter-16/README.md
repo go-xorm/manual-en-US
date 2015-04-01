@@ -1,5 +1,19 @@
 ## Changelog
 
+* **v0.4.3**
+    * Json column type support
+    * oracle expirement support
+    * bug fixed
+
+* **v0.4.2**
+	* Transaction will auto rollback if not Rollback or Commit be called.
+    * Gonic Mapper support
+    * bug fixed
+
+* **v0.4.1**
+    * deleted tag support for soft delete
+    * bug fixed
+
 * **v0.4.0 RC1** 
 	Changes:
 	* moved xorm cmd to [github.com/go-xorm/cmd](github.com/go-xorm/cmd)
