@@ -1,7 +1,7 @@
 # FAQ
 
 * How the xorm tag use both with json?
-  
+
   Use space.
 
 ```Go
@@ -12,7 +12,7 @@ type User struct {
 
 * Does xorm support composite primary key?
 
-  Yes. You can use pk tag. All fields have tag `pk` will as one primary key by fields order on struct. When use, you can use `xorm.PK{1, 2}`. For example: 
+  Yes. You can use pk tag. All fields have tag `pk` will as one primary key by fields order on struct. When use, you can use `xorm.PK{1, 2}`. For example:
 
       `Id(xorm.PK{1, 2})`.
 
@@ -48,3 +48,10 @@ Of course, if join statment is very long, you could directly use Sql():
     err := engine.Sql("select * from userinfo, userdetail where userinfo.detail_id = userdetail.id").Find(&users)
 
     //assert(User.Userinfo.Id != 0 && User.Userdetail.Id != 0)
+
+* How to set database time location?
+
+    ```Go
+    location, err = time.LoadLocation("Asia/Shanghai")
+    engine.TZLocation = location
+    ```
