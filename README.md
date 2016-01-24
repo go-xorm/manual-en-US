@@ -5,7 +5,7 @@ Xorm is a simple and powerful ORM for Go.
 * Struct <-> Table Mapping Support
 
 * Chainable APIs
- 
+
 * Transaction Support
 
 * Both ORM and raw SQL operation Support
@@ -29,17 +29,23 @@ Drivers for Go's sql package which currently support database/sql includes:
 
 * MyMysql: [github.com/ziutek/mymysql/godrv](https://github.com/ziutek/mymysql/godrv)
 
-* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
-
 * Postgres: [github.com/lib/pq](https://github.com/lib/pq)
+
+* Tidb: [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+
+* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 * MsSql: [github.com/denisenkom/go-mssqldb](https://github.com/denisenkom/go-mssqldb)
 
 * MsSql: [github.com/lunny/godbc](https://github.com/lunny/godbc)
 
+* Oracle: [github.com/mattn/go-oci8](https://github.com/mattn/go-oci8) (试验性支持)
+
+* ql: [github.com/cznic/ql](https://github.com/cznic/ql) (试验性支持)
+
 # Installation
 
-If you have [gopm](https://github.com/gpmgo/gopm) installed, 
+If you have [gopm](https://github.com/gpmgo/gopm) installed,
 
 	gopm get github.com/go-xorm/xorm
 
