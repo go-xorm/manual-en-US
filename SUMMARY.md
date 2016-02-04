@@ -21,6 +21,7 @@
     * [Join](chapter-05/5.join.md)
     * [Iterate](chapter-05/6.iterate.md)
     * [Count](chapter-05/7.count.md)
+    * [Rows](chapter-05/8.rows.md)
 * [Update records](chapter-06/README.md)
     * [Optimistic Locking](chapter-06/1.lock.md)
     * [Updated](chapter-06/2.updated.md)
