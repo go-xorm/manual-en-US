@@ -19,6 +19,10 @@ This method will be called before data be deleted on delete process.
 
 This method will be called on  Get or Find. After data is retrieve from database and before data will be set to struct.
 
+* `func AfterSet(name string, cell xorm.Cell)`
+
+This method will be called on Get or Find. After data is retrieve from database and after data was set to struct.
+
 * `AfterInsert()`
 
 This method will be called after data be inserted into database on insert process.
