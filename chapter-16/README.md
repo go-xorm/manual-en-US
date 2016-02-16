@@ -1,5 +1,17 @@
 ## Changelog
 
+* **v0.4.5**
+    * many bugs fixed
+    * extends support unlimited deep
+    * Delete Limit support
+
+* **v0.4.4**
+    * ql database expriment support
+    * tidb database expriment support
+    * sql.NullString and etc. field support
+    * select ForUpdate support
+    * many bugs fixed
+
 * **v0.4.3**
     * Json column type support
     * oracle expirement support
@@ -14,7 +26,7 @@
     * deleted tag support for soft delete
     * bug fixed
 
-* **v0.4.0 RC1** 
+* **v0.4.0 RC1**
 	Changes:
 	* moved xorm cmd to [github.com/go-xorm/cmd](github.com/go-xorm/cmd)
 	* refactored general DB operation a core lib at [github.com/go-xorm/core](https://github.com/go-xorm/core)
@@ -25,7 +37,7 @@
 	* Add Incr API
 	* Specify Timezone Location
 
-* **v0.3.2** 
+* **v0.3.2**
 	Improvements:
 	* Add AllCols & MustCols function
 	* Add TableName for custom table name
@@ -38,13 +50,13 @@
 	* #86
 	* #92
 
-* **v0.3.1** 
+* **v0.3.1**
 
 	Features:
 	* Support MSSQL DB via ODBC driver ([github.com/lunny/godbc](https://github.com/lunny/godbc));
-	* Composite Key, using multiple pk xorm tag 
+	* Composite Key, using multiple pk xorm tag
 	* Added Row() API as alternative to Iterate() API for traversing result set, provide similar usages to sql.Rows type
-	* ORM struct allowed declaration of pointer builtin type as members to allow null DB fields 
+	* ORM struct allowed declaration of pointer builtin type as members to allow null DB fields
 	* Before and After Event processors
 
 	Improvements:
@@ -66,4 +78,3 @@
 * **v0.1.2** : Insert function now supports both struct and slice pointer parameters, batch inserting and auto transaction
 * **v0.1.1** : Add Id, In functions and improved README
 * **v0.1.0** : Initial release.
-

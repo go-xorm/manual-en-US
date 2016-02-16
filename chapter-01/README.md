@@ -1,4 +1,4 @@
-## Create ORM Engine 
+## Create ORM Engine
 
 When using xorm, you can create multiple orm engines, an engine means a databse. So you can：
 
@@ -59,7 +59,7 @@ After engine created, you can do some settings.
 * `engine.ShowError = true`, Show error infomation on standard output;
 * `engine.ShowWarn = true`, Show warnning information on standard output;
 
-2.If want to record infomation with another method: use `engine.Logger` as `io.Writer`:
+2.If want to record infomation with another method: use `engine.SetLogger()` as `io.Writer`:
 
 ```Go
 f, err := os.Create("sql.log")
@@ -67,7 +67,7 @@ f, err := os.Create("sql.log")
         println(err.Error())
         return
     }
-engine.Logger = xorm.NewSimpleLogger(f)
+engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
 3.Engine provide DB connection pool settings.
