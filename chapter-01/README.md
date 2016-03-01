@@ -1,4 +1,4 @@
-## Create ORM Engine
+# Create ORM Engine
 
 When using xorm, you can create multiple orm engines, an engine means a databse. So you can：
 
@@ -52,25 +52,38 @@ NewEngine's parameters are the same as `sql.Open`. So you should read the driver
 
 After engine created, you can do some settings.
 
-1.Logs
+## Logs
 
-* `engine.ShowSQL = true`, Show SQL statement on standard output;
-* `engine.ShowDebug = true`, Show debug infomation on standard output;
-* `engine.ShowError = true`, Show error infomation on standard output;
-* `engine.ShowWarn = true`, Show warnning information on standard output;
+* `engine.ShowSQL(true)`, Show SQL statement on standard output or your io.Writer;
+* `engine.Logger().SetLevel(core.LOG_DEBUG)`, Show debug and other infomations;
 
-2.If want to record infomation with another method: use `engine.SetLogger()` as `io.Writer`:
+If you want to record infomation with another method: use `engine.SetLogger()` as `io.Writer`:
 
 ```Go
 f, err := os.Create("sql.log")
-    if err != nil {
-        println(err.Error())
-        return
-    }
+if err != nil {
+    println(err.Error())
+    return
+}
 engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
-3.Engine provide DB connection pool settings.
+Logs also support record to syslog, for example:
+
+```Go
+logWriter, err := syslog.New(syslog.LOG_DEBUG, "rest-xorm-example")
+if err != nil {
+	log.Fatalf("Fail to create xorm system logger: %v\n", err)
+}
+
+logger := xorm.NewSimpleLogger(logWriter)
+logger.ShowSQL(true)
+engine.SetLogger(logger)
+```
+
+## connections pool
+
+Engine provide DB connections pool settings.
 
 * Use `engine.SetMaxIdleConns()` to set idle connections.
 * Use `engine.SetMaxOpenConns()` to set Max connections. This methods support only Go 1.2+.
