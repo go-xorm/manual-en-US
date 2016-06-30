@@ -16,7 +16,7 @@ fmt.Println(user.Id)
 
 * Insert multiple records by Slice on one table
 ```Go
-users := make([]User, 0)
+users := make([]User, 1)
 users[0].Name = "name0"
 ...
 affected, err := engine.Insert(&users)
@@ -24,7 +24,7 @@ affected, err := engine.Insert(&users)
 
 * Insert multiple records by Slice of pointer on one table
 ```Go
-users := make([]*User, 0)
+users := make([]*User, 1)
 users[0] = new(User)
 users[0].Name = "name0"
 ...
@@ -42,10 +42,10 @@ affected, err := engine.Insert(user, question)
 
 * Insert multiple records on multiple tables.
 ```Go
-users := make([]User, 0)
+users := make([]User, 1)
 users[0].Name = "name0"
 ...
-questions := make([]Question, 0)
+questions := make([]Question, 1)
 questions[0].Content = "whywhywhwy?"
 affected, err := engine.Insert(&users, &questions)
 ```
@@ -55,7 +55,7 @@ affected, err := engine.Insert(&users, &questions)
 user := new(User)
 user.Name = "myname"
 ...
-questions := make([]Question, 0)
+questions := make([]Question, 1)
 questions[0].Content = "whywhywhwy?"
 affected, err := engine.Insert(user, &questions)
 ```
