@@ -22,6 +22,7 @@
     * [Iterate](chapter-05/6.iterate.md)
     * [Count](chapter-05/7.count.md)
     * [Rows](chapter-05/8.rows.md)
+    * [Sum](chapter-05/9.sums.md)
 * [Update records](chapter-06/README.md)
     * [Optimistic Locking](chapter-06/1.lock.md)
     * [Updated](chapter-06/2.updated.md)
