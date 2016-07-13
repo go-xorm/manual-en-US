@@ -57,7 +57,7 @@ After engine is created, you can do some settings.
 * `engine.ShowSQL(true)`, Shows SQL statement on standard output or your io.Writer;
 * `engine.Logger().SetLevel(core.LOG_DEBUG)`, Shows debug and other infomations;
 
-If you want to record infomation with another method: use `engine.SetLogger()` as `io.Writer`:
+If you want to record infomations with another method: use `engine.SetLogger()` as `io.Writer`:
 
 ```Go
 f, err := os.Create("sql.log")
@@ -68,7 +68,7 @@ if err != nil {
 engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
-Logs also support record to syslog, for example:
+Logs also support recording to syslog, for example:
 
 ```Go
 logWriter, err := syslog.New(syslog.LOG_DEBUG, "rest-xorm-example")
