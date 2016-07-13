@@ -1,6 +1,6 @@
 ## 6.Update
 
-You can use `Update` to update the record. The first param of this method is the pointer of struct or map[string]interface{} which need to be update. When this param is the pointer of struct, only non-empty and non-zero field will be updated to database. When it is a `map[string]interface{}`, the map key is the name of the column will be updated, the map value is the content need to be updated.
+You can use `Update` to update the record. The first param of this method is the pointer of struct or `map[string]interface{}` which need to be update. When this param is the pointer of struct, only non-empty and non-zero field will be updated to database. When it is a `map[string]interface{}`, the map key is the name of the column will be updated, the map value is the content needs to be updated.
 
 ```Go
 user := new(User)
