@@ -1,6 +1,6 @@
 # Create ORM Engine
 
-When using xorm, you can create multiple orm engines, an engine means a databse. So you can：
+When using xorm, you can create multiple ORM engines, an engine means a databse. You can do the followings to create ORM engines：
 
 ```Go
 import (
