@@ -6,7 +6,7 @@
     * [Prefix & Suffix Names](chapter-02/2.prefix.md)
     * [Use Table or Tag to change table or column name](chapter-02/3.tags.md)
     * [Column define](chapter-02/4.columns.md)
-* [database schema operation](chapter-03/README.md)
+* [Database schema operation](chapter-03/README.md)
     * [Retrieve database schema infomation](chapter-03/1.metas.md)
     * [Table Operation](chapter-03/2.tables.md)
     * [Create indexes and uniques](chapter-03/3.indexes.md)
