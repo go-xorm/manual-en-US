@@ -1,6 +1,6 @@
 # Create ORM Engine
 
-When using xorm, you can create multiple orm engines, an engine means a databse. So you can：
+When using xorm, you can create multiple ORM engines, an engine means a database. You can do the followings to create ORM engines：
 
 ```Go
 import (
@@ -32,9 +32,9 @@ func main() {
 }
 ```
 
-You can create many engines for different databases.Generally, you just need create only one engine. Engine supports run on go routines.
+You can create many engines for different databases.Generally, you just need to create only one engine. Engine supports run on go routines.
 
-When you want to manually close then engine, call `engine.Close`. Generally, we don't need to do this, because engine will be closed automatically when application exit.
+When you want to manually close the engine, call `engine.Close`. Generally, we don't need to do this, because engine will be closed automatically when application exits.
 
 xorm supports four drivers now:
 
@@ -48,16 +48,16 @@ xorm supports four drivers now:
 
 * MsSql: [github.com/lunny/godbc](https://githubcom/lunny/godbc)
 
-NewEngine's parameters are the same as `sql.Open`. So you should read the drivers' document for parameters' usage.
+NewEngine's parameters are the same as `sql.Open`. So you should read the driver's document for parameter's usage.
 
-After engine created, you can do some settings.
+After engine is created, you can do some settings.
 
 ## Logs
 
-* `engine.ShowSQL(true)`, Show SQL statement on standard output or your io.Writer;
-* `engine.Logger().SetLevel(core.LOG_DEBUG)`, Show debug and other infomations;
+* `engine.ShowSQL(true)`, Shows SQL statement on standard output or your io.Writer;
+* `engine.Logger().SetLevel(core.LOG_DEBUG)`, Shows debug and other infomations;
 
-If you want to record infomation with another method: use `engine.SetLogger()` as `io.Writer`:
+If you want to record infomations with another method: use `engine.SetLogger()` as `io.Writer`:
 
 ```Go
 f, err := os.Create("sql.log")
@@ -68,7 +68,7 @@ if err != nil {
 engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
-Logs also support record to syslog, for example:
+Logs also support recording to syslog, for example:
 
 ```Go
 logWriter, err := syslog.New(syslog.LOG_DEBUG, "rest-xorm-example")
@@ -81,9 +81,9 @@ logger.ShowSQL(true)
 engine.SetLogger(logger)
 ```
 
-## connections pool
+## Connections pool
 
-Engine provide DB connections pool settings.
+Engine provides DB connections pool settings.
 
 * Use `engine.SetMaxIdleConns()` to set idle connections.
 * Use `engine.SetMaxOpenConns()` to set Max connections. This methods support only Go 1.2+.
