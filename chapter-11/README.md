@@ -35,4 +35,4 @@ engine.ClearCache(new(User))
 
 Cache implement theory below:
 
-![cache design](https://raw.github.com/go-xorm/xorm/master/docs/cache_design.png)
+![cache design](https://raw.github.com/go-xorm/xorm/master/docs/images/cache_design.png)
