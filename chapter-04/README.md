@@ -3,18 +3,21 @@
 Inserting records use Insert method. 
 
 * Insert one record
+
 ```Go
 user := new(User)
 user.Name = "myname"
 affected, err := engine.Insert(user)
 ```
 
-After inseted, `user.Id` will be filled with primary key column value.
+After inserted, `user.Id` will be filled if `Id` is an autoincremented column.
+
 ```Go
 fmt.Println(user.Id)
 ```
 
 * Insert multiple records by Slice on one table
+
 ```Go
 users := make([]User, 1)
 users[0].Name = "name0"
@@ -23,6 +26,7 @@ affected, err := engine.Insert(&users)
 ```
 
 * Insert multiple records by Slice of pointer on one table
+
 ```Go
 users := make([]*User, 1)
 users[0] = new(User)
@@ -32,6 +36,7 @@ affected, err := engine.Insert(&users)
 ```
 
 * Insert one record on two table.
+
 ```Go
 user := new(User)
 user.Name = "myname"
@@ -41,6 +46,7 @@ affected, err := engine.Insert(user, question)
 ```
 
 * Insert multiple records on multiple tables.
+
 ```Go
 users := make([]User, 1)
 users[0].Name = "name0"
@@ -51,6 +57,7 @@ affected, err := engine.Insert(&users, &questions)
 ```
 
 * Insert one or multple records on multiple tables.
+
 ```Go
 user := new(User)
 user.Name = "myname"
