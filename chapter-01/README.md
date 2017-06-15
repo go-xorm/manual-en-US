@@ -32,11 +32,11 @@ func main() {
 }
 ```
 
-You can create many engines for different databases.Generally, you just need to create only one engine. Engine supports run on go routines.
+You can create many engines for different databases. Generally, you just need to create only one engine. Engine supports run on go routines.
 
 When you want to manually close the engine, call `engine.Close`. Generally, we don't need to do this, because engine will be closed automatically when application exits.
 
-xorm supports four drivers now:
+xorm supports 7 drivers now:
 
 * Mysql: [github.com/Go-SQL-Driver/MySQL](https://github.com/Go-SQL-Driver/MySQL)
 
@@ -46,7 +46,11 @@ xorm supports four drivers now:
 
 * Postgres: [github.com/lib/pq](https://github.com/lib/pq)
 
-* MsSql: [github.com/lunny/godbc](https://githubcom/lunny/godbc)
+* Tidb: [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+
+* MsSql: [github.com/denisenkom/go-mssqldb](https://github.com/denisenkom/go-mssqldb)
+
+* Oracle: [github.com/mattn/go-oci8](https://github.com/mattn/go-oci8) (experiment)
 
 NewEngine's parameters are the same as `sql.Open`. So you should read the driver's document for parameter's usage.
 
@@ -87,3 +91,4 @@ Engine provides DB connections pool settings.
 
 * Use `engine.SetMaxIdleConns()` to set idle connections.
 * Use `engine.SetMaxOpenConns()` to set Max connections. This methods support only Go 1.2+.
+* Use `engine.SetConnMaxLifetime()` to set Max life time. This methods support only Go 1.6+.

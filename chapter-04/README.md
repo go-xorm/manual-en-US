@@ -67,4 +67,4 @@ questions[0].Content = "whywhywhwy?"
 affected, err := engine.Insert(user, &questions)
 ```
 
-Notice: If you want to use transaction on inserting, you should use session.Begin() before calling Insert.
+Notice: If you want to use transaction on inserting, you should use `session.Begin()` before calling Insert.
