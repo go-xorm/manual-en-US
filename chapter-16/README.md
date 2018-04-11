@@ -1,5 +1,32 @@
 ## Changelog
 
+* **v0.6.5**
+    * Postgres schema support
+    * vgo support
+    * Add FindAndCount
+    * Database special params support via NewEngineWithParams
+    * Some bugs fixed
+
+* **v0.6.4**
+    * Automatical Read/Write seperatelly
+    * Query/QueryString/QueryInterface and action with Where/And
+    * Get support non-struct variables
+    * BufferSize on Iterate
+    * fix some other bugs.
+
+* **v0.6.3**
+    * merge tests to main project
+    * add `Exist` function
+    * add `SumInt` function
+    * Mysql now support read and create column comment.
+    * fix time related bugs.
+    * fix some other bugs.
+
+* **v0.6.2**
+    * refactor tag parse methods
+    * add Scan features to Get
+    * add QueryString method
+
 * **v0.4.5**
     * many bugs fixed
     * extends support unlimited deep
