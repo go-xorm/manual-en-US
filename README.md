@@ -55,7 +55,7 @@ Or
 
 # Documents
 
-* [Manual](http://xorm.io/manual)
+* [Manual](http://xorm.io/docs)
 
 * [GoDoc](http://godoc.org/github.com/go-xorm/xorm)
 
