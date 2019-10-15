@@ -45,14 +45,9 @@ Drivers for Go's sql package which currently support database/sql includes:
 
 # Installation
 
-If you have [gopm](https://github.com/gpmgo/gopm) installed,
-
-	gopm get github.com/go-xorm/xorm
-
-Or
-
-	go get github.com/go-xorm/xorm
-
+```go
+go get xorm.io/xorm
+```
 # Documents
 
 * [Manual](http://xorm.io/docs)
