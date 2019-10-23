@@ -18,7 +18,7 @@
     * [Created](chapter-04/1.created.md)
 * [Query and Count records](chapter-05/README.md)
     * [Query condition methods](chapter-05/1.conditions.md)
-    * [Temporory methods](chapter-05/2.overrides.md)
+    * [Temporary methods](chapter-05/2.overrides.md)
     * [Get](chapter-05/3.get.md)
     * [Find](chapter-05/4.find.md)
     * [Join](chapter-05/5.join.md)
