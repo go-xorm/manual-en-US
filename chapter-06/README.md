@@ -9,12 +9,18 @@ user.Name = "myname"
 affected, err := engine.Id(id).Update(user)
 ```
 
-But if you want to update a zero value to database. There are two chosen:
+But if you want to update a zero value to database. There are three chosen:
 
 1. Use `Cols` to indicate the columns will need to be update even if it is zero or empty.
 
 ```Go
 affected, err := engine.Id(id).Cols("age").Update(&user)
+```
+
+2. User `AllCols` to indicate that every columns will be updated even if it is zero or empty.
+
+```Go
+affected, err := engine.Id(id).AllCols().Update(&user)
 ```
 
 2. Use `map[string]interface{}`, but you need specify the table via a pointer of struct or a string.
