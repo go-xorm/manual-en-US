@@ -17,7 +17,7 @@ But if you want to update a zero value to database. There are three chosen:
 affected, err := engine.Id(id).Cols("age").Update(&user)
 ```
 
-2. User `AllCols` to indicate that every columns will be updated even if it is zero or empty.
+2. Use `AllCols` to indicate that every columns will be updated even if it is zero or empty.
 
 ```Go
 affected, err := engine.Id(id).AllCols().Update(&user)
